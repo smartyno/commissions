@@ -1,111 +1,97 @@
-/* Add custom fonts to the project */
+/* Define custom Diatype font */
 @font-face {
-  font-family: "Diatype Variable";
-  src: url("fonts/ABCDiatype-Regular-Trial.woff") format("woff1"),
-       url("fonts/ABCDiatype-Regular-Trial.woff2") format("woff2");
+  font-family: "Diatype Regular";
+  src: url("/fonts/ABCDiatype-Regular-Trial.woff2") format("woff2"),
+       url("/fonts/ABCDiatype-Regular-Trial.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* Ensures fallback font is used while Diatype loads */
 }
 
-@font-face {
-  font-family: "Repro Variable";
-  src: url("fonts/ABCReproMono-Regular-Trial.woff") format("woff2"),
-       url("fonts/ABCReproMono-Regular-Trial.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* General Form Styles */
-.form {
+/* General Body and Form Styles */
+body {
+  font-family: "Diatype Regular", sans-serif; /* Apply Diatype Regular globally */
   background: #F2EEE8;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-bodycopy {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.85);
-  font-family: "Diatype Variable", sans-serif;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0;
-  display: block;
-  font-variation-settings: 'slnt' 0, 'MONO' 0;
+.form {
+  padding: 1rem;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 600px;
-  width: 100%;
+  gap: 1rem;
 }
 
+/* Label styling */
 label {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.85);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem; /* Space between label and options */
 }
 
+/* Input options (radio buttons, checkboxes) */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 1rem; /* Space between the radio/checkbox buttons */
+  vertical-align: middle; /* Align with the text */
+  margin-bottom: 1rem; /* Space between options */
+}
+
+/* Ensure inputs (text, email, file) start on a new line */
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="number"],
 select,
-input[type="file"],
-input[type="radio"],
-input[type="checkbox"] {
-  padding: 0.8rem;
-  font-size: 1.6rem;
-  font-family: "Diatype Variable", sans-serif; /* Use custom font */
+input[type="file"] {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-family: "Diatype Regular", sans-serif; /* Use custom font */
   border: 1px solid #ccc;
   border-radius: 0;
   width: 100%;
   box-sizing: border-box;
+  height: 2.5rem; /* Set height for input fields */
+  margin-bottom: 0.1rem; /* Space below the input fields */
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 1rem;
+/* Form group styling */
+.form-group {
+  margin-bottom: 1rem; /* Space between each question */
 }
 
+/* For size question inputs (Width & Height on the Same Line) */
 .size-fields {
   display: flex;
   justify-content: space-between;
 }
 
 .size-fields div {
-  width: 48%;
+  width: 30%;
 }
 
 .size-fields label {
   display: block;
 }
 
-.form-group {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-}
-
-
-/* Adjust the font size of the file input's text */
-input[type="file"] {
-  font-size: 1rem; /* Adjust this value as needed */
-}
-
 /* Button Styling */
 .button-15-1 {
-  width: 100%; /* Full width */
-  padding: 1rem;
-  font-size: 1.6rem;
-  font-family: "Diatype Variable", sans-serif;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  font-family: "Diatype Regular", sans-serif; /* Apply Diatype Regular to button */
   background-color: #bcebfa;
   color: rgba(0, 0, 0, 0.85);
   border: none;
@@ -113,28 +99,25 @@ input[type="file"] {
   cursor: pointer;
   text-align: center;
   display: block;
-  box-sizing: border-box; /* Ensure padding and width are correctly handled */
+  box-sizing: border-box;
 }
 
 /* Anchor tag inside button */
 .button-15-1 a {
-  display: block; /* Make anchor fill the button */
-  width: 100%; /* Ensure it fills the entire button */
-  height: 100%; /* Ensure anchor takes full button height */
-  padding: 1rem; /* Match button's padding */
+  display: block;
+  width: 100%;
   color: rgba(0, 0, 0, 0.85);
   text-decoration: none;
-  text-align: center; /* Center text */
-  box-sizing: border-box; /* Ensure padding is included in the element's total size */
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* Hover effect for button */
+/* Hover effects */
 .button-15-1:hover {
-  background-color: #f94b15; /* Change background color */
+  background-color: #f94b15;
 }
 
-/* Hover effect for anchor tag inside button */
 .button-15-1:hover a {
-  background-color: #f94b15; /* Change anchor background on hover */
-  color: white; /* Change text color on hover */
+  background-color: #f94b15;
+  color: white;
 }
