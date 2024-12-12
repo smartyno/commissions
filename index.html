@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Custom Form Example</title>
+  </head>
+  <body>
+    <div class="form">
+      <form
+        action="https://getform.io/f/broorvka"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Your original work -->
+        <div class="form-group">
+          <label for="work-type">Your original work is:</label>
+          <select name="work-type" id="work-type" required>
+            <option value="code-based">
+              Code-based (could be exported as svg, json, or g-code)
+            </option>
+            <option value="image-based">
+              Image-based (available as png or jpeg only)
+            </option>
+          </select>
+        </div>
+
+        <!-- Media interest -->
+        <div class="form-group">
+          <label for="media">Media (select all that interest you):</label>
+          <select name="media[]" id="media" multiple required>
+            <option value="paper">Paper</option>
+            <option value="acrylic">Acrylic</option>
+            <option value="oil">Oil</option>
+            <option value="pencils">Pencils</option>
+            <option value="pen">Pen</option>
+          </select>
+        </div>
+
+        <!-- Level of transformation -->
+        <div class="form-group">
+          <label for="transformation-level"
+            >Level of transformation from the original:</label
+          >
+          <select
+            name="transformation-level"
+            id="transformation-level"
+            required
+          >
+            <option value="direct-transfer">Direct transfer</option>
+            <option value="close-to-original">Close to the original</option>
+            <option value="stylizations-acceptable">
+              Stylizations are acceptable
+            </option>
+          </select>
+        </div>
+
+        <!-- Size (cm) -->
+        <div class="form-group">
+          <label for="width">Size (cm) - Width:</label>
+          <input type="number" name="width" id="width" required />
+        </div>
+        <div class="form-group">
+          <label for="height">Size (cm) - Height:</label>
+          <input type="number" name="height" id="height" required />
+        </div>
+
+        <!-- Attach work sample -->
+        <div class="form-group">
+          <label for="file">Attach work sample (Choose file):</label>
+          <input type="file" name="file" id="file" />
+        </div>
+
+        <!-- Provide a link -->
+        <div class="form-group">
+          <label for="link">Provide a link:</label>
+          <input type="url" name="link" id="link" />
+        </div>
+
+        <!-- Your Name -->
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
