@@ -9,71 +9,85 @@
   </head>
   <body>
     <div class="form">
-      <form
-        action="https://getform.io/f/broorvka"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <!-- Your original work -->
+      <form action="https://getform.io/f/your-endpoint" method="POST" enctype="multipart/form-data">
+        
+        <!-- First Question (Radio Buttons) -->
         <div class="form-group">
-          <label for="work-type">Your original work is:</label>
-          <select name="work-type" id="work-type" required>
-            <option value="code-based">
-              Code-based (could be exported as svg, json, or g-code)
-            </option>
-            <option value="image-based">
-              Image-based (available as png or jpeg only)
-            </option>
-          </select>
+          <label>Your original work is:</label>
+          <div>
+            <input type="radio" id="code-based" name="work-type" value="code-based" required />
+            <label for="code-based">Code-based (could be exported as svg, json, or g-code)</label>
+          </div>
+          <div>
+            <input type="radio" id="image-based" name="work-type" value="image-based" required />
+            <label for="image-based">Image-based (available as png or jpeg only)</label>
+          </div>
         </div>
 
-        <!-- Media interest -->
+        <!-- Second Question (Checkboxes) -->
         <div class="form-group">
-          <label for="media">Media (select all that interest you):</label>
-          <select name="media[]" id="media" multiple required>
-            <option value="paper">Paper</option>
-            <option value="acrylic">Acrylic</option>
-            <option value="oil">Oil</option>
-            <option value="pencils">Pencils</option>
-            <option value="pen">Pen</option>
-          </select>
+          <label>Media (select all that interest you):</label>
+          <div>
+            <input type="checkbox" id="paper" name="media[]" value="paper" />
+            <label for="paper">Paper</label>
+          </div>
+          <div>
+            <input type="checkbox" id="acrylic" name="media[]" value="acrylic" />
+            <label for="acrylic">Acrylic</label>
+          </div>
+          <div>
+            <input type="checkbox" id="oil" name="media[]" value="oil" />
+            <label for="oil">Oil</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pencils" name="media[]" value="pencils" />
+            <label for="pencils">Pencils</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pen" name="media[]" value="pen" />
+            <label for="pen">Pen</label>
+          </div>
         </div>
 
-        <!-- Level of transformation -->
+        <!-- Third Question (Radio Buttons) -->
         <div class="form-group">
-          <label for="transformation-level"
-            >Level of transformation from the original:</label
-          >
-          <select
-            name="transformation-level"
-            id="transformation-level"
-            required
-          >
-            <option value="direct-transfer">Direct transfer</option>
-            <option value="close-to-original">Close to the original</option>
-            <option value="stylizations-acceptable">
-              Stylizations are acceptable
-            </option>
-          </select>
+          <label>Level of transformation from the original:</label>
+          <div>
+            <input type="radio" id="direct-transfer" name="transformation-level" value="direct-transfer" required />
+            <label for="direct-transfer">Direct transfer</label>
+          </div>
+          <div>
+            <input type="radio" id="close-to-original" name="transformation-level" value="close-to-original" required />
+            <label for="close-to-original">Close to the original</label>
+          </div>
+          <div>
+            <input type="radio" id="stylizations-acceptable" name="transformation-level" value="stylizations-acceptable" required />
+            <label for="stylizations-acceptable">Stylizations are acceptable</label>
+          </div>
         </div>
 
-        <!-- Size (cm) -->
-        <div class="form-group">
-          <label for="width">Size (cm) - Width:</label>
-          <input type="number" name="width" id="width" required />
-        </div>
-        <div class="form-group">
-          <label for="height">Size (cm) - Height:</label>
-          <input type="number" name="height" id="height" required />
+        <!-- Size Question (Width & Height on the Same Line) -->
+        <div class="form-group size">
+          <label>Size (cm):</label>
+          <div class="size-fields">
+            <div>
+              <label for="w">Width:</label>
+              <input type="number" id="w" name="width" required />
+            </div>
+            <div>
+              <label for="h">Height:</label>
+              <input type="number" id="h" name="height" required />
+            </div>
+          </div>
         </div>
 
-        <!-- Attach work sample -->
+        <!-- Attach Work Sample -->
         <div class="form-group">
           <label for="file">Attach work sample (Choose file):</label>
           <input type="file" name="file" id="file" />
         </div>
 
-        <!-- Provide a link -->
+        <!-- Provide a Link -->
         <div class="form-group">
           <label for="link">Provide a link:</label>
           <input type="url" name="link" id="link" />
@@ -85,9 +99,17 @@
           <input type="text" name="name" id="name" required />
         </div>
 
-        <!-- Submit button -->
+        <!-- Your Email (New Field) -->
         <div class="form-group">
-          <button type="submit">Submit</button>
+          <label for="email">Your Email:</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="button-15-1">
+            <a href="#">SUBMIT</a>
+          </button>
         </div>
       </form>
     </div>

@@ -1,46 +1,140 @@
-body {
-  background: #000;
-  color: #fff;
-  font-size: 14px;
-  line-height: 1.4;
-  font-family: -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+/* Add custom fonts to the project */
+@font-face {
+  font-family: "Diatype Variable";
+  src: url("fonts/ABCDiatype-Regular-Trial.woff") format("woff1"),
+       url("fonts/ABCDiatype-Regular-Trial.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Repro Variable";
+  src: url("fonts/ABCReproMono-Regular-Trial.woff") format("woff2"),
+       url("fonts/ABCReproMono-Regular-Trial.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Form Styles */
+.form {
+  background: #F2EEE8;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+bodycopy {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Diatype Variable", sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  display: block;
+  font-variation-settings: 'slnt' 0, 'MONO' 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+select,
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  font-family: "Diatype Variable", sans-serif; /* Use custom font */
+  border: 1px solid #ccc;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 1rem;
+}
+
+.size-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.size-fields div {
+  width: 48%;
+}
+
+.size-fields label {
+  display: block;
 }
 
 .form-group {
-  margin-top: 16px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
-.form {
-  max-width: 320px;
-  margin: 32px auto;
-}
 
-input {
-  background: #333;
-  border: 0;
-  padding: 16px;
-  width: 100%;
-  border-radius: 6px;
-  color: #fff;
-  width: 290px;
-}
-
+/* Adjust the font size of the file input's text */
 input[type="file"] {
-  background: transparent;
-  padding-left: 0;
+  font-size: 1rem; /* Adjust this value as needed */
 }
 
-button {
-  width: 320px;
-  display: inline-block;
-  border: 0;
-  padding: 10px;
-  background: #fff;
-  border-radius: 6px;
+/* Button Styling */
+.button-15-1 {
+  width: 100%; /* Full width */
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-family: "Diatype Variable", sans-serif;
+  background-color: #bcebfa;
+  color: rgba(0, 0, 0, 0.85);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  box-sizing: border-box; /* Ensure padding and width are correctly handled */
+}
+
+/* Anchor tag inside button */
+.button-15-1 a {
+  display: block; /* Make anchor fill the button */
+  width: 100%; /* Ensure it fills the entire button */
+  height: 100%; /* Ensure anchor takes full button height */
+  padding: 1rem; /* Match button's padding */
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: none;
+  text-align: center; /* Center text */
+  box-sizing: border-box; /* Ensure padding is included in the element's total size */
+}
+
+/* Hover effect for button */
+.button-15-1:hover {
+  background-color: #f94b15; /* Change background color */
+}
+
+/* Hover effect for anchor tag inside button */
+.button-15-1:hover a {
+  background-color: #f94b15; /* Change anchor background on hover */
+  color: white; /* Change text color on hover */
 }
